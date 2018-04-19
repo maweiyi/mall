@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="../css/common/layout.css">
     <link rel="stylesheet" href="../css/common/nav/index.css">
     <link rel="stylesheet" href="../css/common/header/index.css">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper.css">
+    <link rel="stylesheet" href="../css/common/footer/index.css">
 </head>
 <body>
-<div>
+<div id="app">
     <div class="nav">
         <div class="w">
             <div class="user-info">
                 <span class="user not-login">
-                    <span class="link js-login" @click="goSignIn">登录</span>
-                    <span class="link js-register" @click="goSignUp">注册</span>
+                    <span class="link js-login">登录</span>
+                    <span class="link js-register">注册</span>
                 </span>
             </div>
             <ul class="nav-list">
@@ -98,12 +100,64 @@
             </li>
         </ul>
         <div class="banner-con">
-
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../img/banner/banner1.jpg" class="banner-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/banner/banner2.jpg" class="banner-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/banner/banner3.jpg" class="banner-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/banner/banner4.jpg" class="banner-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../img/banner/banner5.jpg" class="banner-img">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </div>
     <div class="w">
+        <div class="floor-wrap" v-for="(category, index) in categoryData">
+            <h1 class="floor-title">F{{index + 1}} {{category.categoryName}}</h1>
+            <ul class="floor-list">
+                <li class="floor-item" v-for="(item, index1) in category.categoryList">
+                    <a href="javascript:void(0)">
+                        <span class="floor-text">{{item.categoryName}}</span>
+                        <img class="floor-img" :src="getImage(index, index1)">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+    <div class="footer">
+        <div class="w">
+            <div class="links">
+                <a class="link" href="https://juejin.im" target="_blank">掘金</a> |
+                <a class="link" href="https://www.baidu.com" target="_blank">百度</a> |
+                <a class="link" href="https://www.taobao.com" target="_blank">淘宝</a> |
+                <a class="link" href="https://www.zhihu.com" target="_blank">知乎</a>
+            </div>
+            <p class="copyright">
+                Copyright © 2017 京ICP备17045502号 passcloud.net@gmail.com  All Right Reserved
+            </p>
+        </div>
+    </div>
 
+</div>
+<script src="../plugins/swiper/js/swiper.js"></script>
+<script src="../plugins/vue.min.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+    })
+</script>
 </body>
 </html>
