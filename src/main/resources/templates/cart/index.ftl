@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../css/views/index/index.css">
     <link rel="stylesheet" href="../../css/common/layout.css">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../../css/common/footer/index.css">
     <link rel="stylesheet" href="../../css/views/list/index.css">
     <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../css/views/cart/index.css">
 </head>
 <body>
 <div>
@@ -52,38 +54,39 @@
     <div class="crumb">
         <div class="w">
             <div class="crumb-con">
-                <a href="javascript:void(0)" class="link">PCMall</a>
+                <a class="link" href="/">PCMall</a>
                 <span>></span>
-                <span class="link-text">商品列表</span>
+                <span class="link-text">我的购物车</span>
             </div>
         </div>
+
     </div>
-    <div class="list-wrap w">
-        <ul class="sort-con">
-            <li data-type="default" class="sort-item active">默认排序</li>
-            <li class="sort-item" data-type="price">
-                <span>价格</span>
-                <i class="fa fa-sort-asc"></i>
-                <i class="fa fa-sort-desc"></i>
-            </li>
-        </ul>
-        <ul class="p-list-con">
-            <div>
-                <li class="p-item">
-                    <div class="p-img-con">
-                        <a class="link">
-                            <img class="p-img" src="http://oss.paascloud.net/paascloud%2Fpicture%2Fproduct%2F314170052939096064.jpg?e=1525012721&token=AkPvNij0W_t4YdAlCosLVRb7isdRco6YE-7J4Z8y:9ozyjOhXCDv-ojHQikKNYw2ucps=">
-                        </a>
-                    </div>
-                    <div class="p-price-con">
-                        <span class="p-price">1</span>
-                    </div>
-                    <div class="p-name-con">
-                        <a class="p-name">冰箱</a>
-                    </div>
-                </li>
+    <div class="cart-wrap w">
+        <div id="cart_table">
+            <div class="cart-header">
+                <table class="cart-table">
+                    <tr>
+                        <th class="cart-cell cell-check">
+                            <label class="cart-label">
+                                <input type="checkbox" class="cart-select-all">
+                            </label>
+                        </th>
+                        <th class="cart-cell cell-info">商品信息</th>
+                        <th class="cart-cell cell-price">单价</th>
+                        <th class="cart-cell cell-count">数量</th>
+                        <th class="cart-cell cell-total">合计</th>
+                        <th class="cart-cell cell-opera">操作</th>
+                    </tr>
+                </table>
             </div>
-        </ul>
+            <div class="cart-list">
+                <table class="cart-table">
+                    <tr>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="w">
@@ -99,5 +102,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
